@@ -21,6 +21,9 @@ class ShowCardsViewController: UIViewController {
 
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        CardsManager.shared.resetCards()
+    }
 
     /*
     // MARK: - Navigation
@@ -40,13 +43,22 @@ extension ShowCardsViewController: UICollectionViewDelegate{
 
 extension ShowCardsViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return 3
+        return CardsManager.shared.cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as! CardCollectionViewCell
         cell.layer.borderWidth = 1.0
-//        cell.stack
+        var counter = 0
+        for i in 0..<4{
+            for j in 0..<4{
+                let stack = cell.stackView.arrangedSubviews[i+1] as! UIStackView
+                let label = stack.arrangedSubviews[j+1] as! UILabel
+                label.text = CardsManager.shared.cards[indexPath.row][(i+j)+(i*3)]
+                counter += 1
+//                label.text = " hola ssjj "
+            }
+        }
         return cell
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 
 class ConfigurationViewController: UIViewController {
+    
     @IBOutlet weak var sequenceKeyLabel: UILabel!
     @IBOutlet weak var characterSetTextField: UITextField!
     @IBOutlet weak var passcodeLengthLabel: UILabel!
@@ -16,15 +17,15 @@ class ConfigurationViewController: UIViewController {
     @IBOutlet weak var numberOfCardsLabel: UILabel!
     @IBOutlet weak var numberOfCardsStepper: UIStepper!
     
-    var passcodeLength: Int = 4
-    var numberOfCards: Int = 3
+    private var passcodeLength: Int = 4
+    private var numberOfCards: Int = 3
+    private var characterSet = "!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+    
     var sequenceKey: String?{
         willSet{
             sequenceKeyLabel.text = newValue
         }
     }
-    var characterSet = "!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +49,9 @@ class ConfigurationViewController: UIViewController {
     }
     
     @IBAction func changeNumberOfCards(_ sender: UIStepper) {
-        
+        numberOfCardsLabel.text = "\(Int(sender.value))"
     }
     
-
     @IBAction func generateCards(_ sender: UIButton) {
         guard let charSet = characterSetTextField.text else { return }
         if charSet == "" || charSet.count < 3{
@@ -59,16 +59,17 @@ class ConfigurationViewController: UIViewController {
             return
         }
         guard let passCode = Int(passcodeLengthLabel.text ?? "4") else { return }
-        CardsManager.shared.generateCards(configuration: CardsConfiguration(characterSet: charSet, passcodeLength: passCode))
+        guard let numCards = Int(numberOfCardsLabel.text ?? "3") else { return }
+        CardsManager.shared.generateCards(configuration: CardsConfiguration(characterSet: charSet, passcodeLength: passCode, numberOfCards: numCards))
     }
     
     func initialSetup(){
         passcodeLengthStepper.value = Double(passcodeLength)
         numberOfCardsStepper.value = Double(numberOfCards)
         passcodeLengthStepper.minimumValue = 3.0
-        passcodeLengthStepper.maximumValue = 6.0
+        passcodeLengthStepper.maximumValue = 10.0
         numberOfCardsStepper.minimumValue = 1.0
-        numberOfCardsStepper.maximumValue = 10.0
+        numberOfCardsStepper.maximumValue = 8.0
         characterSetTextField.text = characterSet
     }
 }

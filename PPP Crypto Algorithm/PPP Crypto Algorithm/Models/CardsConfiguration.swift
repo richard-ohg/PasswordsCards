@@ -11,4 +11,5 @@ import Foundation
 struct CardsConfiguration{
     let characterSet: String
     let passcodeLength: Int
+    let numberOfCards: Int
 }

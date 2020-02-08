@@ -11,4 +11,5 @@ import UIKit
 class CardCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "PostCell"
     
+    @IBOutlet weak var stackView: UIStackView!
 }

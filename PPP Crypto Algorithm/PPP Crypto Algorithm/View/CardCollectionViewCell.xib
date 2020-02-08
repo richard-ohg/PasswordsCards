@@ -253,6 +253,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="Z1S-bV-9mL"/>
+            <connections>
+                <outlet property="stackView" destination="HqB-dM-l7v" id="tFd-EF-UeF"/>
+            </connections>
             <point key="canvasLocation" x="-185.59999999999999" y="51.724137931034484"/>
         </view>
     </objects>

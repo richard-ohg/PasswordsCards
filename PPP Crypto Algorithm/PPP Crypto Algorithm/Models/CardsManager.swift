@@ -11,12 +11,21 @@ import UIKit
 struct CardsManager{
     
     static var shared = CardsManager()
-    var cards = [String]()
-    var passwordCreator: PasswordsCreator = PasswordsCreator.shared
+    var cards = [[String]]()
+    var temporalArraywithPasswords = [String]()
     
     mutating func generateCards(configuration: CardsConfiguration){
-        for _ in 1...3{
-            cards.append(passwordCreator.getPassword(characterSet: configuration.characterSet, passcodeLength: configuration.passcodeLength))
+        for _ in 1 ... configuration.numberOfCards{
+            for _ in 1 ... 16{
+                temporalArraywithPasswords.append(PasswordsCreator.shared.getPassword(characterSet: configuration.characterSet, passcodeLength: configuration.passcodeLength))
+            }
+            cards.append(temporalArraywithPasswords)
+            temporalArraywithPasswords.removeAll()
         }
+        PasswordsCreator.shared.resetCounter()
+    }
+    
+    mutating func resetCards(){
+        cards.removeAll()
     }
 }
