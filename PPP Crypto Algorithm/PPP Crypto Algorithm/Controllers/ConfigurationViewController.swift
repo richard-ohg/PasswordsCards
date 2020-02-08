@@ -13,8 +13,11 @@ class ConfigurationViewController: UIViewController {
     @IBOutlet weak var characterSetTextField: UITextField!
     @IBOutlet weak var passcodeLengthLabel: UILabel!
     @IBOutlet weak var passcodeLengthStepper: UIStepper!
+    @IBOutlet weak var numberOfCardsLabel: UILabel!
+    @IBOutlet weak var numberOfCardsStepper: UIStepper!
     
     var passcodeLength: Int = 4
+    var numberOfCards: Int = 3
     var sequenceKey: String?{
         willSet{
             sequenceKeyLabel.text = newValue
@@ -43,6 +46,11 @@ class ConfigurationViewController: UIViewController {
     @IBAction func changePasscodeLength(_ sender: UIStepper) {
         passcodeLengthLabel.text = "\(Int(sender.value))"
     }
+    
+    @IBAction func changeNumberOfCards(_ sender: UIStepper) {
+        
+    }
+    
 
     @IBAction func generateCards(_ sender: UIButton) {
         guard let charSet = characterSetTextField.text else { return }
@@ -56,8 +64,11 @@ class ConfigurationViewController: UIViewController {
     
     func initialSetup(){
         passcodeLengthStepper.value = Double(passcodeLength)
+        numberOfCardsStepper.value = Double(numberOfCards)
         passcodeLengthStepper.minimumValue = 3.0
-        passcodeLengthStepper.maximumValue = 8.0
+        passcodeLengthStepper.maximumValue = 6.0
+        numberOfCardsStepper.minimumValue = 1.0
+        numberOfCardsStepper.maximumValue = 10.0
         characterSetTextField.text = characterSet
     }
 }

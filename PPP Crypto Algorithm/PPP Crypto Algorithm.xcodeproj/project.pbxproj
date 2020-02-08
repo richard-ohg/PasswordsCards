@@ -11,7 +11,6 @@
 		770C8FD423ED4DCC00147396 /* CardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C8FD323ED4DCC00147396 /* CardsManager.swift */; };
 		770C8FD623ED4F3600147396 /* SecurityWithCryptoKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C8FD523ED4F3600147396 /* SecurityWithCryptoKit.swift */; };
 		770C8FD823ED5C7200147396 /* PasswordsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C8FD723ED5C7200147396 /* PasswordsCreator.swift */; };
-		770C8FDB23ED5F9D00147396 /* String+split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C8FDA23ED5F9D00147396 /* String+split.swift */; };
 		770C8FDD23EDB31700147396 /* AlertsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C8FDC23EDB31700147396 /* AlertsCreator.swift */; };
 		770C8FDF23EDB7B500147396 /* CardsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C8FDE23EDB7B500147396 /* CardsConfiguration.swift */; };
 		7786F15823E3D8F5006B087C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7786F15723E3D8F5006B087C /* AppDelegate.swift */; };
@@ -22,6 +21,9 @@
 		7786F16423E3D8FC006B087C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7786F16223E3D8FC006B087C /* LaunchScreen.storyboard */; };
 		7786F16F23E3D8FC006B087C /* PPP_Crypto_AlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7786F16E23E3D8FC006B087C /* PPP_Crypto_AlgorithmTests.swift */; };
 		7786F17A23E3D8FD006B087C /* PPP_Crypto_AlgorithmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7786F17923E3D8FD006B087C /* PPP_Crypto_AlgorithmUITests.swift */; };
+		778EE5FE23EE341900BFB635 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778EE5FC23EE341900BFB635 /* CardCollectionViewCell.swift */; };
+		778EE5FF23EE341900BFB635 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778EE5FD23EE341900BFB635 /* CardCollectionViewCell.xib */; };
+		778EE60123EE46CA00BFB635 /* ShowCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778EE60023EE46CA00BFB635 /* ShowCardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,6 @@
 		770C8FD323ED4DCC00147396 /* CardsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsManager.swift; sourceTree = "<group>"; };
 		770C8FD523ED4F3600147396 /* SecurityWithCryptoKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityWithCryptoKit.swift; sourceTree = "<group>"; };
 		770C8FD723ED5C7200147396 /* PasswordsCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsCreator.swift; sourceTree = "<group>"; };
-		770C8FDA23ED5F9D00147396 /* String+split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+split.swift"; sourceTree = "<group>"; };
 		770C8FDC23EDB31700147396 /* AlertsCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsCreator.swift; sourceTree = "<group>"; };
 		770C8FDE23EDB7B500147396 /* CardsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsConfiguration.swift; sourceTree = "<group>"; };
 		7786F15423E3D8F5006B087C /* PPP Crypto Algorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PPP Crypto Algorithm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +64,9 @@
 		7786F17523E3D8FC006B087C /* PPP Crypto AlgorithmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PPP Crypto AlgorithmUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7786F17923E3D8FD006B087C /* PPP_Crypto_AlgorithmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPP_Crypto_AlgorithmUITests.swift; sourceTree = "<group>"; };
 		7786F17B23E3D8FD006B087C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		778EE5FC23EE341900BFB635 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		778EE5FD23EE341900BFB635 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		778EE60023EE46CA00BFB635 /* ShowCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 			children = (
 				7786F15D23E3D8F5006B087C /* Main.storyboard */,
 				7786F16223E3D8FC006B087C /* LaunchScreen.storyboard */,
+				778EE5FC23EE341900BFB635 /* CardCollectionViewCell.swift */,
+				778EE5FD23EE341900BFB635 /* CardCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,16 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				7786F15B23E3D8F5006B087C /* ConfigurationViewController.swift */,
+				778EE60023EE46CA00BFB635 /* ShowCardsViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		770C8FD923ED5F8200147396 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				770C8FDA23ED5F9D00147396 /* String+split.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7786F14B23E3D8F5006B087C = {
@@ -170,7 +169,6 @@
 				770C8FCC23ED331000147396 /* View */,
 				770C8FD223ED346300147396 /* Controllers */,
 				770C8FCB23ED330100147396 /* Utils */,
-				770C8FD923ED5F8200147396 /* Extensions */,
 				7786F15723E3D8F5006B087C /* AppDelegate.swift */,
 				7786F15923E3D8F5006B087C /* SceneDelegate.swift */,
 				7786F16023E3D8FC006B087C /* Assets.xcassets */,
@@ -301,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778EE5FF23EE341900BFB635 /* CardCollectionViewCell.xib in Resources */,
 				7786F16423E3D8FC006B087C /* LaunchScreen.storyboard in Resources */,
 				7786F16123E3D8FC006B087C /* Assets.xcassets in Resources */,
 				7786F15F23E3D8F5006B087C /* Main.storyboard in Resources */,
@@ -333,9 +332,10 @@
 				770C8FD623ED4F3600147396 /* SecurityWithCryptoKit.swift in Sources */,
 				770C8FD423ED4DCC00147396 /* CardsManager.swift in Sources */,
 				770C8FDF23EDB7B500147396 /* CardsConfiguration.swift in Sources */,
-				770C8FDB23ED5F9D00147396 /* String+split.swift in Sources */,
+				778EE60123EE46CA00BFB635 /* ShowCardsViewController.swift in Sources */,
 				7786F15823E3D8F5006B087C /* AppDelegate.swift in Sources */,
 				7786F15A23E3D8F5006B087C /* SceneDelegate.swift in Sources */,
+				778EE5FE23EE341900BFB635 /* CardCollectionViewCell.swift in Sources */,
 				770C8FD023ED341A00147396 /* UInt128.swift in Sources */,
 				770C8FD823ED5C7200147396 /* PasswordsCreator.swift in Sources */,
 			);
