@@ -17,9 +17,10 @@ class ConfigurationViewController: UIViewController {
     @IBOutlet weak var numberOfCardsLabel: UILabel!
     @IBOutlet weak var numberOfCardsStepper: UIStepper!
     
-    private var passcodeLength: Int = 4
-    private var numberOfCards: Int = 3
-    private var characterSet = "!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+    private let passcodeLength: Int = 4
+    private let numberOfCards: Int = 3
+    private let characterSet = "!#%+23456789:=?@ABCDEFGHJKLMNPRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+    private let keyForKeychain = "sequenceKey"
     
     var sequenceKey: String?{
         willSet{
@@ -31,12 +32,9 @@ class ConfigurationViewController: UIViewController {
         super.viewDidLoad()
         initialSetup()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        sequenceKey = SecurityWithCryptoKit.shared.generateSequenceKey()
-    }
-
+ 
     @IBAction func generateNewKey(_ sender: UIButton) {
+        KeychainManager.shared.deleteKey(key: keyForKeychain)
         sequenceKey = SecurityWithCryptoKit.shared.generateSequenceKey()
     }
     
@@ -60,6 +58,8 @@ class ConfigurationViewController: UIViewController {
         }
         guard let passCode = Int(passcodeLengthLabel.text ?? "4") else { return }
         guard let numCards = Int(numberOfCardsLabel.text ?? "3") else { return }
+        guard let seqKey = sequenceKey else { return }
+        KeychainManager.shared.saveKey(data: seqKey, key: keyForKeychain)
         CardsManager.shared.generateCards(configuration: CardsConfiguration(characterSet: charSet, passcodeLength: passCode, numberOfCards: numCards))
     }
     
@@ -71,6 +71,11 @@ class ConfigurationViewController: UIViewController {
         numberOfCardsStepper.minimumValue = 1.0
         numberOfCardsStepper.maximumValue = 8.0
         characterSetTextField.text = characterSet
+        if let retrieveSeqKey = KeychainManager.shared.retrieveKey(key: keyForKeychain) {
+            sequenceKey = retrieveSeqKey
+        }else{
+            sequenceKey = SecurityWithCryptoKit.shared.generateSequenceKey()
+        }
     }
 }
 

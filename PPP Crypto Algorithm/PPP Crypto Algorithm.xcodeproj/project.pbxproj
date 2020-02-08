@@ -24,6 +24,8 @@
 		778EE5FE23EE341900BFB635 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778EE5FC23EE341900BFB635 /* CardCollectionViewCell.swift */; };
 		778EE5FF23EE341900BFB635 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 778EE5FD23EE341900BFB635 /* CardCollectionViewCell.xib */; };
 		778EE60123EE46CA00BFB635 /* ShowCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778EE60023EE46CA00BFB635 /* ShowCardsViewController.swift */; };
+		778EE60323EF329E00BFB635 /* KeychainSwiftDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778EE60223EF329E00BFB635 /* KeychainSwiftDistrib.swift */; };
+		778EE60623EF32D500BFB635 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778EE60523EF32D500BFB635 /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		778EE5FC23EE341900BFB635 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		778EE5FD23EE341900BFB635 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		778EE60023EE46CA00BFB635 /* ShowCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCardsViewController.swift; sourceTree = "<group>"; };
+		778EE60223EF329E00BFB635 /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
+		778EE60523EF32D500BFB635 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		770C8FCB23ED330100147396 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				778EE60423EF32AD00BFB635 /* Keychain */,
 				770C8FCE23ED340500147396 /* UInt128 */,
 				770C8FD523ED4F3600147396 /* SecurityWithCryptoKit.swift */,
 				770C8FDC23EDB31700147396 /* AlertsCreator.swift */,
@@ -193,6 +198,15 @@
 				7786F17B23E3D8FD006B087C /* Info.plist */,
 			);
 			path = "PPP Crypto AlgorithmUITests";
+			sourceTree = "<group>";
+		};
+		778EE60423EF32AD00BFB635 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				778EE60223EF329E00BFB635 /* KeychainSwiftDistrib.swift */,
+				778EE60523EF32D500BFB635 /* KeychainManager.swift */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778EE60623EF32D500BFB635 /* KeychainManager.swift in Sources */,
 				770C8FDD23EDB31700147396 /* AlertsCreator.swift in Sources */,
 				7786F15C23E3D8F5006B087C /* ConfigurationViewController.swift in Sources */,
 				770C8FD623ED4F3600147396 /* SecurityWithCryptoKit.swift in Sources */,
@@ -338,6 +353,7 @@
 				778EE5FE23EE341900BFB635 /* CardCollectionViewCell.swift in Sources */,
 				770C8FD023ED341A00147396 /* UInt128.swift in Sources */,
 				770C8FD823ED5C7200147396 /* PasswordsCreator.swift in Sources */,
+				778EE60323EF329E00BFB635 /* KeychainSwiftDistrib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
